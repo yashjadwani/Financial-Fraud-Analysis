@@ -34,11 +34,18 @@ The project follows a structured data science pipeline:
 - Identify key patterns or anomalies in fraudulent vs. non-fraudulent transactions.
 
 ### 🧠 Feature Engineering
-- Create new variables based on domain knowledge (e.g., transaction frequency, amount thresholds).
+- Create new variables based on domain knowledge (e.g., transaction frequency, amount thresholds, risk score, repeat transactions, transaction type/mode).
 
 ### 🤖 Model Building
-- Train Logistic Regression, Random Forest, and XGBoost models.
+- Train Decision Tree, Random Forest, XGBoost models and with Voting Classifiers (Hard and Soft).
 - Use `GridSearchCV` and cross-validation for hyperparameter tuning.
+
+### 🧩 Autoencoder for Unsupervised Fraud Detection
+- Learns normal transaction patterns using only genuine transactions via a fully-connected encoder-decoder network.
+- Reconstruction error is computed and modelled using a Gaussian Mixture Model (GMM) to identify anomalies.
+- Transactions with log-likelihood below a set percentile (anomaly_percentile) are flagged as potential fraud.
+- Trained with MSE loss and Adam optimiser; early stopping prevents overfitting.
+- Hyperparameters (code_dim, epochs, batch_size, learning_rate, n_components) can be tuned based on data size and desired recall/precision trade-off.
 
 ### 📈 Model Evaluation
 - Evaluate models using precision, recall, F1-score, and ROC AUC.
@@ -46,7 +53,7 @@ The project follows a structured data science pipeline:
 
 
 ## 📌 Conclusion
-This project concludes that machine learning models can provide significant improvements over rule-based fraud detection systems. However, challenges such as imbalanced data, feature drift, and evolving fraud strategies must be addressed through continuous data updates and retraining. By building a scalable and interpretable fraud detection system, this project showcases how data science can enhance financial security.
+This project concludes that machine learning models can provide significant improvements over rule-based fraud detection systems. However, challenges such as imbalanced data, feature drift, and evolving fraud strategies must be addressed through continuous data updates and retraining. By building a scalable, interpretable fraud detection system, this project demonstrates how data science can enhance financial security.
 
 ## 📦Dependencies
 This project uses several Python packages and libraries, including:
