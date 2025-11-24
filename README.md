@@ -40,7 +40,7 @@ The project follows a structured data science pipeline:
 - Train Decision Tree, Random Forest, XGBoost models and with Voting Classifiers (Hard and Soft).
 - Use `GridSearchCV` and cross-validation for hyperparameter tuning.
 
-### 🧩 Autoencoder for Unsupervised Fraud Detection
+### 🧩 Autoencoder for Unsupervised Fraud Detection ([Anomaly Detection Autoencoder](https://github.com/yashjadwani/Autoencoder))
 - Learns normal transaction patterns using only genuine transactions via a fully-connected encoder-decoder network.
 - Reconstruction error is computed and modelled using a Gaussian Mixture Model (GMM) to identify anomalies.
 - Transactions with log-likelihood below a set percentile (anomaly_percentile) are flagged as potential fraud.
